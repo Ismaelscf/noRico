@@ -1,0 +1,2 @@
+# noRico
+Nova Olindense Rico
