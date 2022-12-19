@@ -32,4 +32,8 @@ class Store extends Model
     public function sales(){
         return $this->hasMany(Sale::class, 'store_id', 'id');
     }
+
+    public function sorts(){
+        return $this->hasMany(Sort::class, 'store_id', 'id');
+    }
 }
