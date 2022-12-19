@@ -22,6 +22,6 @@ class Store extends Model
     ];
 
     public function adresses(){
-        // return $this->hasMany();
+        return $this->hasMany(Address::class, 'store_id', 'id');
     }
 }

@@ -53,4 +53,8 @@ class User extends Authenticatable
     public function installments_seller(){
         return $this->hasMany(Installment::class, 'seller_id', 'id');
     }
+
+    public function address(){
+        return $this->hasMany(Address::class, 'user_id', 'id');
+    }
 }
