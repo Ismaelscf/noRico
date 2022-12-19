@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Store extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'phone',
+        'logo',
+        'full_discount',
+        'percentage_discount',
+        'active',
+        'discount',
+        'sort',
+    ];
+
+    public function adresses(){
+        // return $this->hasMany();
+    }
+}

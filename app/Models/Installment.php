@@ -9,6 +9,14 @@ class Installment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'quota_id',
+        'user_id',
+        'seller_id',
+        'price',
+        'due_date',
+        'payday',
+    ];
 
     public function user(){
         return $this->belongsTo(User::class);
