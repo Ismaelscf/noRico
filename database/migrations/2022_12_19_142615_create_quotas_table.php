@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('initial_date');
             $table->date('final_date');
             $table->float('customer_limit');
-            $table->enum('status', []);
+            $table->enum('status', ['ativa', 'inativa']);
             $table->timestamps();
         });
     }
