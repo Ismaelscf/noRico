@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('sorts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('store_id')->constrained(Store::class, 'id');
+            $table->foreignId('store_id')->constrained('stores', 'id');
             $table->string('award');
             $table->enum('type', ['geral', 'loja']);
             $table->string('description');

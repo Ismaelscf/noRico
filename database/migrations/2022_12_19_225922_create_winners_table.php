@@ -17,8 +17,8 @@ return new class extends Migration
     {
         Schema::create('winners', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained(User::class, 'id');
-            $table->foreignId('sort_id')->constrained(Sort::class, 'id');
+            $table->foreignId('user_id')->constrained('users', 'id');
+            $table->foreignId('sort_id')->constrained('sorts', 'id');
             $table->timestamps();
         });
     }
