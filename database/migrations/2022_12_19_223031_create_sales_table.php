@@ -18,9 +18,9 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('store_id')->constrained(Store::class, 'id');
-            $table->foreignId('employee_id')->constrained(StoreEmployee::class, 'id');
-            $table->foreignId('user_id')->constrained(User::class, 'id');
+            $table->foreignId('store_id')->constrained('stores', 'id');
+            $table->foreignId('employee_id')->constrained('store_employees', 'id');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->float('total_sale');
             $table->float('discount');
             $table->date('sale_date');
