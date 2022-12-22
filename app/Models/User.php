@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'cpf',
+        'phone',
+        'photo',
+        'active',
     ];
 
     /**
@@ -41,4 +45,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function installments(){
+        return $this->hasMany(Installment::class, 'user_id', 'id');
+    }
+
+    public function installments_seller(){
+        return $this->hasMany(Installment::class, 'seller_id', 'id');
+    }
+
+    public function address(){
+        return $this->hasMany(Address::class, 'user_id', 'id');
+    }
+
+    public function sales(){
+        return $this->hasMany(Sale::class, 'user_id', 'id');
+    }
 }
