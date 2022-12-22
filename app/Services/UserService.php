@@ -17,4 +17,8 @@ class UserService
     {
         $this->userRepository = $userRepository;
     }
+
+    public function create($dados){
+        $this->userRepository->create($dados);
+    }
 }

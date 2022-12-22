@@ -25,6 +25,6 @@ Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');
 
-Route::get('/admin/newUser', function() {
-    return view('teste');
-})->name('newUser')->middleware('auth');
+Route::get('/admin/newUser', [App\Http\Controllers\UserController::class, 'index'])->name('newUser')->middleware('auth');
+Route::post('/admin/newUser', [App\Http\Controllers\UserController::class, 'create'])->name('SaveNewUser')->middleware('auth');
+

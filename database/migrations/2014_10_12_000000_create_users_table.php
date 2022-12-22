@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('photo');
-            $table->boolean('active');
+            $table->boolean('active')->default(true);;
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
