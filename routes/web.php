@@ -22,8 +22,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Stores
-Route::prefix('store')->name('store')->group(function () {
-    Route::get([App\Http\Controllers\StoreController::class, 'index'])->name('.index');
+Route::prefix('/store')->name('store')->group(function () {
+    Route::get('/index', [App\Http\Controllers\StoreController::class, 'index'])->name('.index');
 });
 
 // Auth::routes();
