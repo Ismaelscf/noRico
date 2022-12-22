@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('quotas', function (Blueprint $table) {
             $table->id();
+            $table->string('description');
             $table->float('total_price');
             $table->date('initial_date');
             $table->date('final_date');
