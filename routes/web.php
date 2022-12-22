@@ -21,13 +21,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Auth::routes();
+
+Route::get('/home', function() {
+    return view('home');
+})->name('home')->middleware('auth');
+
+
 // Stores
 Route::prefix('/store')->name('store')->group(function () {
     Route::get('/index', [App\Http\Controllers\StoreController::class, 'index'])->name('.index');
 });
-
-// Auth::routes();
-
-// Route::get('/home', function() {
-//     return view('home');
-// })->name('home')->middleware('auth');
