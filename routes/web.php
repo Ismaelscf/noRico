@@ -31,5 +31,5 @@ Route::get('/home', function() {
 // Stores
 Route::prefix('/store')->name('store')->group(function () {
     Route::get('/index', [App\Http\Controllers\StoreController::class, 'index'])->name('.index');
-    Route::get('/cadastrar', [App\Http\Controllers\StoreController::class, 'create'])->name('.index');
+    Route::post('/cadastrar', [App\Http\Controllers\StoreController::class, 'create'])->name('.cadastrar');
 });

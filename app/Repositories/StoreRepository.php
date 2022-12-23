@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Store;
+use App\Repositories\Request;
 
 class StoreRepository
 {
@@ -14,6 +15,15 @@ class StoreRepository
     }
 
     public function getAll(){
-        dd($this->store::All());
+        return $this->store::All();
+    }
+
+    public function create(object $storeCreate){
+        // dd($storeCreate, 'Repository');
+
+    }
+
+    public function searchStore($value, $field){
+        return $this->store->where($value, '=', $field)->get();
     }
 }
