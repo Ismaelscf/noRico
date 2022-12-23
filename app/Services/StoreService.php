@@ -17,4 +17,8 @@ class StoreService
     {
         $this->storeRepository = $storeRepository;
     }
+
+    public function getAll(){
+        $this->storeRepository->getAll();
+    }
 }

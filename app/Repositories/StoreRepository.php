@@ -12,4 +12,8 @@ class StoreRepository
     {
         $this->store = $store;
     }
+
+    public function getAll(){
+        dd($this->store::All());
+    }
 }

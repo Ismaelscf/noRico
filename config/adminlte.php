@@ -386,13 +386,7 @@ return [
         // ],
         [
             'text' => 'Lojas',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Listar Lojas',
-                    'url' => 'store/index',
-                ],
-            ],
+            'url' => 'store/index',
         ]
     ],
 
