@@ -14,10 +14,10 @@ class AddressRepository
     }
 
     public function create($dados, $id){
-        
+
+        // dd($dados, $user);
         $dados = json_decode (json_encode ($dados), FALSE);
 
-        // dd($dados);
 
         $address = new Address();
 
@@ -30,12 +30,12 @@ class AddressRepository
         
         $address->type = $dados->type;
         $address->state = $dados->state;
+        $address->city = $dados->city;
         $address->district = $dados->district;
-        $address->district = $dados->district;
+        $address->street = $dados->street;
         $address->number = $dados->number;
         $address->complement = $dados->complement;
 
-        // dd($address);
         $address->save();
 
     }

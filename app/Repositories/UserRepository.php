@@ -26,6 +26,11 @@ class UserRepository
         $user->phone = $dados->phone;
         $user->photo = $dados->photo;
         $user->save();
+    }
 
+    public function buscarIdPorCPF($cpf){
+        $user = User::where('cpf', $cpf)->first();
+
+        return $user->id;
     }
 }

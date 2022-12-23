@@ -21,9 +21,23 @@ class UserService
     }
 
     public function create($dados){
-        $id = $this->userRepository->create($dados);
-        $dados['type'] = 'pessoal';
+        try {
+            
+            $this->userRepository->create($dados);
+            $user = $this->userRepository->buscarIdPorCPF($dados['cpf']);
+            $dados['type'] = 'pessoal';
 
-        $this->addressRepository->create($dados, $id);
+            $this->addressRepository->create($dados, $user);
+
+        } catch (Exception $exception) {
+            return view('user.index', [
+                'msg' =>$exception->getMessage()
+            ]);
+        }
+
+        $msg = 'Usuario Criado';
+        return $msg;
     }
+
+    
 }
