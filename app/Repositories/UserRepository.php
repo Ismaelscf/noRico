@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class UserRepository
@@ -20,12 +21,11 @@ class UserRepository
         $user = new User();
         $user->name = $dados->name;
         $user->cpf = $dados->cpf;
-        $user->password = $dados->password;
+        $user->password = Hash::make($dados->password);
         $user->email = $dados->email;
         $user->phone = $dados->phone;
         $user->photo = $dados->photo;
         $user->save();
-        // $user->active = $dados->active;        
-        dd('rep', $user);
+
     }
 }

@@ -28,3 +28,6 @@ Route::get('/home', function() {
 Route::get('/admin/newUser', [App\Http\Controllers\UserController::class, 'index'])->name('newUser')->middleware('auth');
 Route::post('/admin/newUser', [App\Http\Controllers\UserController::class, 'create'])->name('SaveNewUser')->middleware('auth');
 
+// Route::prefix('store')->name('store')->group(function () {
+//     Route::get([App\Http\Controllers\StoreController::class, 'index'])->name('.index');
+// });

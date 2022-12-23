@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
-            $table->string('logo');
-            $table->float('full_discount');
-            $table->float('percentage_discount');
+            $table->string('logo')->nullable(true);
+            $table->float('full_discount')->nullable(true);
+            $table->float('percentage_discount')->nullable(true);
             $table->boolean('active');
             $table->boolean('discount');
             $table->boolean('sort');
